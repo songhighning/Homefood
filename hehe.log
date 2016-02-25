@@ -1,172 +1,0 @@
-[1mdiff --git a/Food eater/Design/User Case.docx b/Food eater/Design/User Case.docx[m
-[1mnew file mode 100644[m
-[1mindex 0000000..5867618[m
-[1m--- /dev/null[m
-[1m+++ b/Food eater/Design/User Case.docx[m	
-[36m@@ -0,0 +1,28 @@[m
-[32m+[m[32mDate: Feb 8, 2016[m
-[32m+[m[32mHomefood eater[m
-[32m+[m[32mUse Case Description[m
-[32m+[m[32m* The customer logs onto "Homefood eater". The system verifies the user info. The user selects the list of food to order. They then select either pickup, deliver or dine in. The system verifies that the credit card is valid and available to use. The user confirms the list of dishes and make the purchase. The system sends the order details to the "Homefood maker".[m[41m [m
-[32m+[m[32mTriggers[m
-[32m+[m[32m* Customer logs onto "Homefood eater"[m
-[32m+[m[32mActors[m
-[32m+[m[32m* Customer[m
-[32m+[m[32m* Homefood maker[m
-[32m+[m[32mPreconditions[m
-[32m+[m[32m* A Homefood maker is available[m
-[32m+[m[32m* A customer is available[m
-[32m+[m[32m* A valid credit card is registered under the user and is available[m
-[32m+[m[32mGoals[m
-[32m+[m[32m* Provide customers with a list of dishes on "Homefood maker" to order from[m
-[32m+[m[32m* Send the order details to "Homefood maker"[m
-[32m+[m[32m* Notifies the customer when the food is ready[m
-[32m+[m[32mSteps of execution[m
-[32m+[m[32m* A customer logs onto "Homefood eater"[m
-[32m+[m[32m* The customer select a list of food to order[m
-[32m+[m[32m* The customer confirms the order[m
-[32m+[m[32m* Order details are sent to "Homefood maker"[m
-[32m+[m[32m* Customer is notified when the food is ready[m
-[32m+[m[32mNouns[m
-[32m+[m[32m* Homefood eater[m
-[32m+[m[32m* Homefood maker[m
-[32m+[m[32m* Homefood System[m
-[32m+[m[32m* Order[m
-[1mdiff --git a/Food eater/Design/class diagram.txt b/Food eater/Design/class diagram.txt[m
-[1mnew file mode 100644[m
-[1mindex 0000000..6e6d4aa[m
-[1m--- /dev/null[m
-[1m+++ b/Food eater/Design/class diagram.txt[m	
-[36m@@ -0,0 +1,132 @@[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m:HomefoodMaker[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m- email:String[m[41m[m
-[32m+[m[32m- shopName:String[m[41m[m
-[32m+[m[32m- HomefoodMakerID:int[m[41m[m
-[32m+[m[32m- menu: ArrayList<Food>[m[41m[m
-[32m+[m[32m- orderHistory:ArrayList<Order>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m- HomefoodMakerIDIncrementor:int = 100000 (STATIC)[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m+ HomefoodMaker(shopName:String, email:String)[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m+ getEmail():String[m[41m[m
-[32m+[m[32m+ setEmail():String[m[41m[m
-[32m+[m[32m+ setShopName():String[m[41m[m
-[32m+[m[32m+ getShopName():String[m[41m[m
-[32m+[m[32m+ getOrderHistory():ArrayList<Order>[m[41m[m
-[32m+[m[32m+ addOrderToHistory(theOrder:Order):Void[m[41m[m
-[32m+[m[32m+ addFoodToMenu(theFood:Food):Void[m[41m[m
-[32m+[m[32m+ removeFoodFromMenu(theFood:Food): Void[m[41m[m
-[32m+[m[32m+ notifyHomefoodEaterFoodIsready(theOrder:Order)[m[41m[m
-[32m+[m[32m_________________________________[m[41m[m
-[32m+[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mooooooooooooooooooooooooooooooooo[m[41m[m
-[32m+[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m:HomefoodEater[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m- Email:String[m[41m[m
-[32m+[m[32m- CustomerName:String[m[41m[m
-[32m+[m[32m- HomefoodEaterID:int[m[41m[m
-[32m+[m[32m- CurrentOrderSession:Order[m[41m[m
-[32m+[m[32m- OrderHistory:ArrayList<Order>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m- HomefoodEaterIDIncrementor:int = 100000 (STATIC)[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m+ HomefoodEater(customerName:String, email:String)[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m+ getEmail():String[m[41m[m
-[32m+[m[32m+ setEmail():String[m[41m[m
-[32m+[m[32m+ confirmOrder(): Void[m[41m[m
-[32m+[m[32m+ setCustomerName():String[m[41m[m
-[32m+[m[32m+ getCustomerName():String[m[41m[m
-[32m+[m[32m+ getCurrenOrderSession():Order[m[41m[m
-[32m+[m[32m+ getOrderHistory():ArrayList<Order>[m[41m[m
-[32m+[m[32m+ addOrderToHistory(theOrder:Order):Void[m[41m[m
-[32m+[m[32m+ viewHomefoodMakerList():ArrayList<String>[m[41m[m
-[32m+[m[32m+ selectHomefoodMaker(theHomeFoodMakerID:int):Order[m[41m[m
-[32m+[m[32m+ addFoodToOrder(theFood:Food):Void[m[41m[m
-[32m+[m[32m+ removeFoodFromOrder(theFood:Food): Void[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m_________________________________[m[41m[m
-[32m+[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mooooooooooooooooooooooooooooooooo[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m:HomefoodSystem[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m- homeFoodEaterList:ArrayList<HomefoodEater>[m[41m[m
-[32m+[m[32m- homeFoodMakerList:ArrayList<HomefoodMaker>[m[41m[m
-[32m+[m[32m- orderHistory:ArrayList<Order>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m+ HomefoodSystem()[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m+ sendOrderToHomefoodMaker(theOrder:Order): void[m[41m[m
-[32m+[m[32m+ notifyHomefoodEaterFoodIsready(theOrder:Order) void[m[41m[m
-[32m+[m[32m+ addHomefoodEaterToSystem(theHomefoodEater:HomefoodEater): void[m[41m[m
-[32m+[m[32m+ addHomefoodMakerToSystem(theHomefoodMaker:HomefoodMaker): void[m[41m[m
-[32m+[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mooooooooooooooooooooooooooooooooo[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m:Food[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m- foodID: int[m[41m[m
-[32m+[m[32m- foodName:String[m[41m[m
-[32m+[m[32m- foodPrice:int[m[41m[m
-[32m+[m[32m- cookingTime:int 	//in minutes[m[41m[m
-[32m+[m[32m- theHomefoodMaker:HomefoodMaker[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m- generateFoodID(): int[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m+ Food(foodName:String, foodPrice:String, cookingTime:int, theHomefoodMaker:HomefoodMaker)[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m+ getFoodID():int[m[41m[m
-[32m+[m[32m+ getFoodName():String[m[41m[m
-[32m+[m[32m+ setFoodName(foodName:String):void[m[41m[m
-[32m+[m[32m+ getFoodPrice():int[m[41m[m
-[32m+[m[32m+ setFoodPrice(foodPrice:int): void[m[41m[m
-[32m+[m[32m+ getCookingTime():int[m[41m[m
-[32m+[m[32m+ setCookingTime(cookingTime:int):void[m[41m[m
-[32m+[m[32m+ getHomefoodMaker(): HomefoodMaker[m[41m[m
-[32m+[m[32m+ setHomefoodMaker(theHomefoodMaker:HomefoodMaker): void[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32mooooooooooooooooooooooooooooooooo[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m:Order[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m
-[32m+[m[32m- orderID:int[m[41m[m
-[32m+[m[32m- orderTime: Time[m[41m[m
-[32m+[m[32m- theHomefoodEater: HomefoodEater[m[41m[m
-[32m+[m[32m- theHomefoodMaker: HomefoodMaker[m[41m[m
-[32m+[m[32m- foodList:ArrayList<Food>[m[41m[m
-[32m+[m[32m- foodQuantity:ArrayList<int>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m----------------------------------[m[41m[m
-[32m+[m[32m- addFoodToOrder(theFood:Food, quantity:int):void[m[41m[m
-[32m+[m[32m- removeFoodFromOrder(theFood:Food):void[m[41m[m
-[32m+[m[32m- getOrderTime():Time[m[41m[m
-[32m+[m[32m- setHomefoodEater(homeFoodEater:HomefoodEater)[m[41m[m
-[32m+[m[32m- getHomefoodEater():HomefoodEater[m[41m[m
-[32m+[m[32m- setHomefoodMaker(homeFoodMaker:HomefoodMaker)[m[41m[m
-[32m+[m[32m- getHomefoodMaker():HomefoodMaker[m[41m[m
-[32m+[m[32m- getFoodList():ArrayList<Food>[m[41m[m
-[32m+[m[32m- getFoodQuantity:ArrayList<int>[m[41m[m
-[32m+[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m---------------------------------[m[41m[m

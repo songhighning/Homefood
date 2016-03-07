@@ -1,0 +1,6 @@
+package HomefoodEater;
+
+public class Food {
+	private String FoodName;
+	private double Price;
+}

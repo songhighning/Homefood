@@ -1,0 +1,20 @@
+package HomefoodEater;
+
+import java.util.ArrayList;
+
+public class HomefoodSystem {
+	private ArrayList<HomefoodMaker> homeFoodEaterList;
+	private ArrayList<HomefoodEater> homeFoodMakerList;
+	private ArrayList<Order> orderHistory;
+	
+	public void notifyHomefoodEaterFoodIsReady(Order theOrder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void sendOrderToFoodMaker(Order currentOrderSession) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

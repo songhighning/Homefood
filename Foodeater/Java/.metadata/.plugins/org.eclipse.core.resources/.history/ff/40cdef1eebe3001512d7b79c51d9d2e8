@@ -1,0 +1,7 @@
+package HomefoodEater;
+
+public class HomefoodEater {
+	private String Email;
+	private String CustomerName;
+	
+}

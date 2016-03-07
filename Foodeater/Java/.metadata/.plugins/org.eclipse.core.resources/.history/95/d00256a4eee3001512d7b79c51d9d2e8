@@ -1,0 +1,90 @@
+package HomefoodEater;
+
+import java.util.ArrayList;
+
+public class HomefoodEater {
+	private String email;
+	private String customerName;
+	private int homeFoodEaterID;
+	private Order currentOrderSession;
+	private HomefoodSystem theHomefoodSystem;
+	private ArrayList<Order> orderHistory;
+	
+	
+
+	static int homefoodEaterIDIncrementor = 100000;
+
+	public void confirmOrder(){
+		theHomefoodSystem.sendOrderToFoodMaker(getCurrentOrderSession());
+	}
+	
+	public void addOrderToHistory(Order theOrder){
+		orderHistory.add(theOrder);
+	}
+	
+	public ArrayList<HomefoodMaker> viewHomefoodMakerList(){
+		return theHomefoodSystem.getHomeFoodMakerList();
+	}
+	
+	public ArrayList<Food> selectHomefoodMaker(HomefoodMaker theHomefoodMaker){
+		currentOrderSession.setTheHomefoodEater(this);
+		currentOrderSession.setTheHomefoodMaker(theHomefoodMaker);
+		return theHomefoodMaker.getMenu();
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public int getHomeFoodEaterID() {
+		return homeFoodEaterID;
+	}
+
+	public void setHomeFoodEaterID(int homeFoodEaterID) {
+		this.homeFoodEaterID = homeFoodEaterID;
+	}
+
+	public Order getCurrentOrderSession() {
+		return currentOrderSession;
+	}
+
+	public void setCurrentOrderSession(Order currentOrderSession) {
+		this.currentOrderSession = currentOrderSession;
+	}
+
+	public HomefoodSystem getTheHomefoodSystem() {
+		return theHomefoodSystem;
+	}
+
+	public void setTheHomefoodSystem(HomefoodSystem theHomefoodSystem) {
+		this.theHomefoodSystem = theHomefoodSystem;
+	}
+
+	public static int getHomefoodEaterIDIncrementor() {
+		return homefoodEaterIDIncrementor;
+	}
+
+	public static void setHomefoodEaterIDIncrementor(int homefoodEaterIDIncrementor) {
+		HomefoodEater.homefoodEaterIDIncrementor = homefoodEaterIDIncrementor;
+	}
+	
+	public ArrayList<Order> getOrderHistory() {
+		return orderHistory;
+	}
+
+	public void setOrderHistory(ArrayList<Order> orderHistory) {
+		this.orderHistory = orderHistory;
+	}
+}

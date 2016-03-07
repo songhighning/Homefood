@@ -1,0 +1,16 @@
+package HomefoodEater;
+
+public class HomefoodSystem {
+	private ArrayList<homeFoodEaterList >;
+	
+	public void notifyHomefoodEaterFoodIsReady(Order theOrder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void sendOrderToFoodMaker(Order currentOrderSession) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

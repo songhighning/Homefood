@@ -1,0 +1,8 @@
+package HomefoodEater;
+import java.util.Date;
+
+public class Order {
+	private int orderId;
+	private Date orderTime;
+	
+}

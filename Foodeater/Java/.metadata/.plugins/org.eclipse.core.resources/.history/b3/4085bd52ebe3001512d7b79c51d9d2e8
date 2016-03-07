@@ -1,0 +1,13 @@
+package HomefoodEater;
+
+public class HomefoodEater {
+	private String email;
+	private String customerName;
+	private int homeFoodEaterID;
+	private Order currentOrderSession;
+	private HomefoodSystem theHomefoodSystem;
+	
+	static int homefoodEaterIDIncrementor = 100000;
+	
+	
+}

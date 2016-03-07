@@ -1,0 +1,8 @@
+package HomefoodEater;
+
+public class HomefoodMaker {
+	private String Email;
+	private String shopName;
+	private menu ArrayList<Food>;
+	
+}

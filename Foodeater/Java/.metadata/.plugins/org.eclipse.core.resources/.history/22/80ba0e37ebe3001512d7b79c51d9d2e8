@@ -1,0 +1,9 @@
+package HomefoodEater;
+
+public class HomefoodEater {
+	private String email;
+	private String customerName;
+	private int homeFoodEaterID;
+	private Order currentOrderSession;
+	
+}

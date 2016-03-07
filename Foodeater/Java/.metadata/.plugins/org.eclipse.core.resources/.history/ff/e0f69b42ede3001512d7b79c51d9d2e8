@@ -1,0 +1,44 @@
+package HomefoodEater;
+
+import java.util.ArrayList;
+
+public class HomefoodSystem {
+	private ArrayList<HomefoodEaker> homeFoodEaterList;
+	private ArrayList<HomefoodMater> homeFoodMakerList;
+	private ArrayList<Order> orderHistory;
+	
+	public void notifyHomefoodEaterFoodIsReady(Order theOrder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void sendOrderToFoodMaker(Order currentOrderSession) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public ArrayList<HomefoodMaker> getHomeFoodEaterList() {
+		return homeFoodEaterList;
+	}
+
+	public void setHomeFoodEaterList(ArrayList<HomefoodMaker> homeFoodEaterList) {
+		this.homeFoodEaterList = homeFoodEaterList;
+	}
+
+	public ArrayList<HomefoodEater> getHomeFoodMakerList() {
+		return homeFoodMakerList;
+	}
+
+	public void setHomeFoodMakerList(ArrayList<HomefoodEater> homeFoodMakerList) {
+		this.homeFoodMakerList = homeFoodMakerList;
+	}
+
+	public ArrayList<Order> getOrderHistory() {
+		return orderHistory;
+	}
+
+	public void setOrderHistory(ArrayList<Order> orderHistory) {
+		this.orderHistory = orderHistory;
+	}
+	
+}

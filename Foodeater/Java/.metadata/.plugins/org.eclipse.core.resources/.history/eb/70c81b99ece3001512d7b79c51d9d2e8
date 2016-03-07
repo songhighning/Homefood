@@ -1,0 +1,15 @@
+package HomefoodEater;
+
+public class HomefoodSystem {
+	
+	public void notifyHomefoodEaterFoodIsReady(Order theOrder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void sendOrderToFoodMaker(Order currentOrderSession) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

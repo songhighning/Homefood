@@ -1,0 +1,13 @@
+package HomefoodEater;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Order {
+	private int orderId;
+	private Date orderTime;
+	private HomefoodMaker theHomefoodMaker;
+	private HomefoodEater theHomefoodEater;
+	private ArrayList<Food> foodNameList;
+	private ArrayList<Integer> foodQuantity;
+	
+}

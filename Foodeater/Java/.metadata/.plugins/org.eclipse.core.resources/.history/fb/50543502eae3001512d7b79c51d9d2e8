@@ -1,0 +1,12 @@
+package HomefoodEater;
+import java.util.ArrayList;
+
+public class HomefoodMaker {
+	private String Email;
+	private String shopName;
+	private ArrayList<Food> menu;
+	private ArrayList<Order> orderHistory;
+	
+	static int HomefoodMakerIDIncrementor = 100000;
+	
+}

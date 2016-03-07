@@ -1,0 +1,132 @@
+---------------------------------
+:HomefoodMaker
+---------------------------------
+- email:String
+- shopName:String
+- HomefoodMakerID:int
+- menu: ArrayList<Food>
+- orderHistory:ArrayList<Order>
+
+- HomefoodMakerIDIncrementor:int = 100000 (STATIC)
+
+---------------------------------
++ HomefoodMaker(shopName:String, email:String)
+
++ getEmail():String
++ setEmail():String
++ setShopName():String
++ getShopName():String
++ getOrderHistory():ArrayList<Order>
++ addOrderToHistory(theOrder:Order):Void
++ addFoodToMenu(theFood:Food):Void
++ removeFoodFromMenu(theFood:Food): Void
++ notifyHomefoodEaterFoodIsready(theOrder:Order)
+_________________________________
+
+
+ooooooooooooooooooooooooooooooooo
+
+
+---------------------------------
+:HomefoodEater
+---------------------------------
+- Email:String
+- CustomerName:String
+- HomefoodEaterID:int
+- CurrentOrderSession:Order
+- OrderHistory:ArrayList<Order>
+
+- HomefoodEaterIDIncrementor:int = 100000 (STATIC)
+
+---------------------------------
++ HomefoodEater(customerName:String, email:String)
+
++ getEmail():String
++ setEmail():String
++ confirmOrder(): Void
++ setCustomerName():String
++ getCustomerName():String
++ getCurrenOrderSession():Order
++ getOrderHistory():ArrayList<Order>
++ addOrderToHistory(theOrder:Order):Void
++ viewHomefoodMakerList():ArrayList<String>
++ selectHomefoodMaker(theHomeFoodMakerID:int):Order
++ addFoodToOrder(theFood:Food):Void
++ removeFoodFromOrder(theFood:Food): Void
+
+_________________________________
+
+
+ooooooooooooooooooooooooooooooooo
+
+---------------------------------
+:HomefoodSystem
+---------------------------------
+- homeFoodEaterList:ArrayList<HomefoodEater>
+- homeFoodMakerList:ArrayList<HomefoodMaker>
+- orderHistory:ArrayList<Order>
+
+---------------------------------
++ HomefoodSystem()
+
++ sendOrderToHomefoodMaker(theOrder:Order): void
++ notifyHomefoodEaterFoodIsready(theOrder:Order) void
++ addHomefoodEaterToSystem(theHomefoodEater:HomefoodEater): void
++ addHomefoodMakerToSystem(theHomefoodMaker:HomefoodMaker): void
+
+
+---------------------------------
+
+ooooooooooooooooooooooooooooooooo
+
+---------------------------------
+:Food
+---------------------------------
+- foodID: int
+- foodName:String
+- foodPrice:int
+- cookingTime:int 	//in minutes
+- theHomefoodMaker:HomefoodMaker
+
+---------------------------------
+- generateFoodID(): int
+
++ Food(foodName:String, foodPrice:String, cookingTime:int, theHomefoodMaker:HomefoodMaker)
+
++ getFoodID():int
++ getFoodName():String
++ setFoodName(foodName:String):void
++ getFoodPrice():int
++ setFoodPrice(foodPrice:int): void
++ getCookingTime():int
++ setCookingTime(cookingTime:int):void
++ getHomefoodMaker(): HomefoodMaker
++ setHomefoodMaker(theHomefoodMaker:HomefoodMaker): void
+
+---------------------------------
+
+ooooooooooooooooooooooooooooooooo
+
+---------------------------------
+:Order
+---------------------------------
+- orderID:int
+- orderTime: Time
+- theHomefoodEater: HomefoodEater
+- theHomefoodMaker: HomefoodMaker
+- foodList:ArrayList<Food>
+- foodQuantity:ArrayList<int>
+
+----------------------------------
+- addFoodToOrder(theFood:Food, quantity:int):void
+- removeFoodFromOrder(theFood:Food):void
+- getOrderTime():Time
+- setHomefoodEater(homeFoodEater:HomefoodEater)
+- getHomefoodEater():HomefoodEater
+- setHomefoodMaker(homeFoodMaker:HomefoodMaker)
+- getHomefoodMaker():HomefoodMaker
+- getFoodList():ArrayList<Food>
+- getFoodQuantity:ArrayList<int>
+
+
+---------------------------------

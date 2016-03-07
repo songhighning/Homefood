@@ -6,14 +6,24 @@ public class HomefoodEater {
 	private String email;
 	private String customerName;
 	private int homeFoodEaterID;
-	private Order currentOrderSession;
+	private Order currentOrderSession = new Order();
 	private HomefoodSystem theHomefoodSystem;
-	private ArrayList<Order> orderHistory;
+	private ArrayList<Order> orderHistory = new ArrayList<Order>();
 	
-	
-
 	static int homefoodEaterIDIncrementor = 100000;
 
+	HomefoodEater(String email, String customerName, HomefoodSystem theSystem){
+		this.email = email;
+		this.customerName = customerName;
+		this.theHomefoodSystem = theSystem;
+		this.homeFoodEaterID = generateFoodEaterID();
+		//theSystem.addHomefoodEater(this);
+	}
+	
+	static private int generateFoodEaterID(){
+		return homefoodEaterIDIncrementor++;
+	}
+	
 	public void confirmOrder(){
 		theHomefoodSystem.sendOrderToFoodMaker(getCurrentOrderSession());
 	}
@@ -27,6 +37,7 @@ public class HomefoodEater {
 	}
 	
 	public ArrayList<Food> selectHomefoodMaker(HomefoodMaker theHomefoodMaker){
+		//Order currentOrderSession = new Order();
 		currentOrderSession.setTheHomefoodEater(this);
 		currentOrderSession.setTheHomefoodMaker(theHomefoodMaker);
 		return theHomefoodMaker.getMenu();
@@ -91,4 +102,13 @@ public class HomefoodEater {
 	public void setOrderHistory(ArrayList<Order> orderHistory) {
 		this.orderHistory = orderHistory;
 	}
+
+	public void foodIsReadyNotification(Order theOrder){
+		System.out.println("Order # "+ theOrder.getOrderId()+" is ready.");
+		for (Food food:theOrder.getFoodNameList()){
+			System.out.println(food.getFoodName());
+		}
+	}
+	
+	
 }

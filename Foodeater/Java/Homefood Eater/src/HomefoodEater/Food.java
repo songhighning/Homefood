@@ -3,6 +3,12 @@ package HomefoodEater;
 public class Food {
 	private String foodName;
 	private double foodPrice;
+	
+	Food(String foodName, double foodPrice){
+		this.foodName = (foodName);
+		this.foodPrice = (foodPrice);
+	}
+	
 	public String getFoodName() {
 		return foodName;
 	}

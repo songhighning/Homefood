@@ -6,9 +6,20 @@ public class Order {
 	private int orderId;
 	private Date orderTime;
 	private HomefoodMaker theHomefoodMaker;
-	private HomefoodEater theHomefoodEater;
-	private ArrayList<Food> foodNameList;
-	private ArrayList<Integer> foodQuantity;
+	private HomefoodEater theHomefoodEater ;
+	private ArrayList<Food> foodNameList = new ArrayList<Food>();
+	private ArrayList<Integer> foodQuantity = new ArrayList<Integer>();
+	
+	static int orderIDIncrementor = 100000;
+	
+	Order (){
+		this.orderId = generateOrderID();
+	}
+	
+	static private int generateOrderID(){
+		orderIDIncrementor = orderIDIncrementor + 1;
+		return orderIDIncrementor;
+	}
 	
 	
 	public int getOrderId() {

@@ -7,7 +7,7 @@ public class Order {
 	private Date orderTime;
 	private HomefoodMaker theHomefoodMaker;
 	private HomefoodEater theHomefoodEater ;
-	private ArrayList<Food> foodNameList = new ArrayList<Food>();
+	private ArrayList<Food> foodList = new ArrayList<Food>();
 	private ArrayList<Integer> foodQuantity = new ArrayList<Integer>();
 	
 	static int orderIDIncrementor = 100000;
@@ -46,11 +46,11 @@ public class Order {
 	public void setTheHomefoodEater(HomefoodEater theHomefoodEater) {
 		this.theHomefoodEater = theHomefoodEater;
 	}
-	public ArrayList<Food> getFoodNameList() {
-		return foodNameList;
+	public ArrayList<Food> getFoodList() {
+		return foodList;
 	}
-	public void setFoodNameList(ArrayList<Food> foodNameList) {
-		this.foodNameList = foodNameList;
+	public void setFoodList(ArrayList<Food> foodNameList) {
+		this.foodList = foodNameList;
 	}
 	public ArrayList<Integer> getFoodQuantity() {
 		return foodQuantity;
@@ -60,7 +60,7 @@ public class Order {
 	}
 	
 	public void addFoodToOrder(Food theFood, int quantity){
-		foodNameList.add(theFood);
+		foodList.add(theFood);
 		foodQuantity.add(quantity);
 	}
 	

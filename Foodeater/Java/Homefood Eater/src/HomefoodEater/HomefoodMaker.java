@@ -18,14 +18,9 @@ public class HomefoodMaker {
 		this.theHomefoodSystem = theSystem;
 		this.menu = new ArrayList<Food>();
 		this.orderHistory = new ArrayList<Order>();
-		//theSystem.addHomefoodMaker(this);
+		theSystem.addHomefoodMaker(this);
 	}
 	
-	
-	
-	public HomefoodMaker() {
-		// TODO Auto-generated constructor stub
-	}
 
 
 
@@ -102,6 +97,7 @@ public class HomefoodMaker {
 	}
 	
 	public void receivesOrder(Order theOrder){
+		addOrderToHistory(theOrder);
 		notifyHomefoodEaterFoodIsReady(theOrder);
 	}
 }

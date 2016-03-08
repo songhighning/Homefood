@@ -22,8 +22,8 @@ public class testHomefoodEater {
 		stainFreeShwarma.addFoodToMenu(ChickenShwarma);
 		stainFreeShwarma.addFoodToMenu(BeefShwarma);
 		
-		theHomefoodSystem.addHomefoodMaker(chefDingDeli);
-		theHomefoodSystem.addHomefoodMaker(stainFreeShwarma);
+		//theHomefoodSystem.addHomefoodMaker(chefDingDeli);
+		//theHomefoodSystem.addHomefoodMaker(stainFreeShwarma);
 		
 		//create Home food eater
 		HomefoodEater FatBob = new HomefoodEater("Fat.bob@gmail.com",

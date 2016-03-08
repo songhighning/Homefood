@@ -17,7 +17,7 @@ public class HomefoodEater {
 		this.customerName = customerName;
 		this.theHomefoodSystem = theSystem;
 		this.homeFoodEaterID = generateFoodEaterID();
-		//theSystem.addHomefoodEater(this);
+		theSystem.addHomefoodEater(this);
 	}
 	
 	static private int generateFoodEaterID(){
@@ -26,6 +26,8 @@ public class HomefoodEater {
 	
 	public void confirmOrder(){
 		theHomefoodSystem.sendOrderToFoodMaker(getCurrentOrderSession());
+		addOrderToHistory(getCurrentOrderSession());
+		currentOrderSession = new Order();
 	}
 	
 	public void addOrderToHistory(Order theOrder){
@@ -37,7 +39,6 @@ public class HomefoodEater {
 	}
 	
 	public ArrayList<Food> selectHomefoodMaker(HomefoodMaker theHomefoodMaker){
-		//Order currentOrderSession = new Order();
 		currentOrderSession.setTheHomefoodEater(this);
 		currentOrderSession.setTheHomefoodMaker(theHomefoodMaker);
 		return theHomefoodMaker.getMenu();
@@ -105,7 +106,7 @@ public class HomefoodEater {
 
 	public void foodIsReadyNotification(Order theOrder){
 		System.out.println("Order # "+ theOrder.getOrderId()+" is ready.");
-		for (Food food:theOrder.getFoodNameList()){
+		for (Food food:theOrder.getFoodList()){
 			System.out.println(food.getFoodName());
 		}
 	}
